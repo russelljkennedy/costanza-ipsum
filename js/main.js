@@ -3,6 +3,33 @@
 // Document ready functions
 jQuery(document).ready(function($) {
 
+  function getQuotes() {
+
+    // $quote = '';
+    // $quoteCount = 1;
+
+    // Text file
+    $.get('assets/george.txt', function(data){
+      // Quotes
+      var quotes = data.split("\n");
+      // console.log(quotes);
+
+
+      // function getQuote() {
+      //   var quote = Math.floor(quotes.length * Math.random());
+      //   console.log(quotes[quote]);
+      // };
+
+    });
+
+
+
+    };
+
+
+
+
+
   $.get('assets/george.txt', function(data){
     // Grab all quotes, separated by line breaks
     var quotes = data.split("\n");
@@ -17,16 +44,17 @@ jQuery(document).ready(function($) {
         $('.add').append("&nbsp;");
 
         $currentQuote = (quotes[quote]);
-        console.log($currentQuote);
+        $index = $currentQuote.index();
+        console.log($index);
         // $currentCount++;
         // console.log($currentCount);
 
     });
 
-    $('#costanza').click(function() {
-      console.log($currentQuote);
-      $($currentQuote).remove();
-  });
+  //   $('#costanza').click(function() {
+  //     console.log($currentQuote);
+  //     $($currentQuote).remove();
+  // });
 
 
 
