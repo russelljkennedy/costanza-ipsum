@@ -2,149 +2,48 @@
 
 // Document ready functions
 jQuery(document).ready(function($) {
-
-  function getQuotes() {
-
-    // $quote = '';
-    // $quoteCount = 1;
-
-    // Text file
+  // Add a new paragraph
+  function newPara() {
+    $quoteBlock = $('#quoteblock');
+    $blockCount = 1;
+    // Change the previous quoteblock id and append a new quoteblock - this way new quotes will always be added to the #quoteblock element. Increment the block count
+    $quoteBlock.attr("id", "quoteblock_" + $blockCount);
+    $('.add').append("<div id='quoteblock'>");
+    $blockCount++;
+  };
+    // Grab the quote file from the server
     $.get('assets/george.txt', function(data){
-      // Quotes
+      // Set a var for the number of quotes added, then fetch everything from the txt file, split by line breaks
+      $totalQuotes = 0;
       var quotes = data.split("\n");
-      // console.log(quotes);
-
-
-      // function getQuote() {
-      //   var quote = Math.floor(quotes.length * Math.random());
-      //   console.log(quotes[quote]);
-      // };
-
+      // Add a quote to the DOM
+      $('#george').click(function() {
+        // Increment the quote count, pick one at random to add, assign it an ID so it can be removed. Display it with a space afterwards
+        $totalQuotes++;
+        $chosenQuote = Math.floor(quotes.length * Math.random());
+        $quoteId = "quote_" + $totalQuotes;
+        $displayQuote = (quotes[$chosenQuote] + " ");
+        // Add a div for the quotes to sit in. Used later by the newPara function
+        if($totalQuotes == 1) {
+            $('.add').append("<div id='quoteblock'><span id='" + $quoteId + "'>" + $displayQuote + "</span>");
+        }
+        else {
+            $('#quoteblock').append("<span id='" + $quoteId + "'>" + $displayQuote + "</span>");
+        }
+      });
+      // Remove a quote from the DOM using the ID set above. Decrement the quote count accordingly
+      $('#costanza').click(function() {
+        $("#quote_" + $totalQuotes).remove();
+        $totalQuotes--;
+      });
+      // Add a new paragraph on button click
+      $('#art').click(function() {
+        newPara();
+      });
+      // Clear all the ipsum and reset the quote count
+      $('#vanderlay').click(function() {
+        $("[id^=quoteblock]").remove();
+        $totalQuotes = 0;
+      });
     });
-
-
-
-    };
-
-
-
-
-
-  $.get('assets/george.txt', function(data){
-    // Grab all quotes, separated by line breaks
-    var quotes = data.split("\n");
-
-    $currentCount = 1;
-
-    // Add a quote
-    $('#george').click(function() {
-      var quote = Math.floor(quotes.length * Math.random());
-
-        $('.add').append(quotes[quote]);
-        $('.add').append("&nbsp;");
-
-        $currentQuote = (quotes[quote]);
-        $index = $currentQuote.index();
-        console.log($index);
-        // $currentCount++;
-        // console.log($currentCount);
-
-    });
-
-  //   $('#costanza').click(function() {
-  //     console.log($currentQuote);
-  //     $($currentQuote).remove();
-  // });
-
-
-
-});
-
-
-  // $findQuote = (function() {
-    //     $.ajax({
-      //         url : "assets/george.txt",
-      //         dataType: "text",
-      //         success : function (data) {
-        //             // $(".add").html(data.split('\n'));
-        //             $quote = shuffle(data.split('\n'));
-        //         }
-        //     });
-        // });
-
-        //   var gc = new Array;
-        //
-        //   $.get('assets/george.txt', function(data) {
-          //    // do_something_with(data)
-          //    gc = data.split("\n");
-          //    // $(".add").html(gc);
-          //    // console.log(gc);
-          // });
-
-  // $count = 1;
-  // $quote = '';
-  // $findQuote = function() {
-  //   $.get('assets/george.txt').success(function(data){
-  //     $quote = random(data.split('\n'));
-  //   });
-  // };
-
-  // $findQuote = (function() {
-  //     $.ajax({
-  //         url : "assets/george.txt",
-  //         dataType: "text",
-  //         success : function (data) {
-  //             // $(".add").html(data.split('\n'));
-  //             $quote = random(data.split('\n'));
-  //             console.log($quote);
-  //           }
-  //     });
-  // });
-  //
-  // var random = function(data) {
-  //   for (var j, x, i = data.length; i; j = parseInt(Math.random() * i, 10), x = data[--i], data[i] = data[j], data[j] = x);
-  //   return data;
-  // };
-
-
-
-// /* Controllers */
-// myApp.controller('IpsumCtrl', ['$scope', '$http', function($scope, $http) {
-//   $scope.quoteCount = 1;
-//   $scope.ipsum = '';
-//   $scope.getIpsum = function() {
-//     $http.get('/ipsum/words.txt').success(function(data) {
-//       $scope.ipsum = shuffle(data.split('\n'));
-//     });
-//   };
-//   var shuffle = function(data) {
-//     for (var j, x, i = data.length; i; j = parseInt(Math.random() * i, 10), x = data[--i], data[i] = data[j], data[j] = x);
-//     return data;
-//   };
-//   $scope.tooFew = function() {
-//     if ($scope.quoteCount < 2) return true;
-//     else return false;
-//   };
-//   $scope.getIpsum();
-//   $scope.addIpsum = function() {
-//     $scope.quoteCount = $scope.quoteCount + 1;
-//   };
-//   $scope.lessIpsum = function() {
-//     $scope.quoteCount = $scope.quoteCount - 1;
-//   };
-// }]);
-//
-// function selectText(containerid) {
-//   if (document.selection) {
-//     var range = document.body.createTextRange();
-//     range.moveToElementText(document.getElementById(containerid));
-//     range.select();
-//   } else if (window.getSelection) {
-//     var range = document.createRange();
-//     range.selectNode(document.getElementById(containerid));
-//     window.getSelection().addRange(range);
-//   }
-// }
-
-
 });
