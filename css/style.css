@@ -14,3 +14,9 @@ body {
 h1, h2, h3, h4 {
   font-family: 'Srisakdi', cursive;
 }
+div[id^="quoteblock"] {
+  background:  #333332;
+  padding: 20px;
+  min-height: 30px;
+  margin-bottom: 10px;
+}
