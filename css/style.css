@@ -21,7 +21,12 @@ body {
 h1, h2, h3, h4 {
   font-family: 'Srisakdi', cursive;
 }
+.title-container {
+  text-align: center;
+}
 h1.title {
+  display: inline-block;
+  background: #fcd720;
   font-size: 7rem;
   text-align: center;
   padding-bottom: 30px;
