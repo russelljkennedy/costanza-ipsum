@@ -29,7 +29,7 @@ jQuery(document).ready(function($) {
             $('#quoteblock').append('<span id="' + $quoteId + '">' + $displayQuote + '</span>');
         }
       });
-      // Remove a quote from the DOM using the ID set above. Decrement the quote count accordingly
+      // Remove a quote from the DOM using the ID set above
       $('#costanza').click(function() {
         $('#quote_' + $totalQuotes).remove();
         // Check to see if the quoteblock is empty. If it is, remove it and set the last child as the active block
@@ -39,7 +39,10 @@ jQuery(document).ready(function($) {
           $quoteBlock.remove();
           $lastQuoteBlock.attr('id', 'quoteblock');
         }
-        $totalQuotes--;
+        // Only decrement the quote count if there are quotes on the page
+        if ($totalQuotes > 0) {
+            $totalQuotes--;
+        }
       });
       // Add a new paragraph on button click
       $('#art').click(function() {
