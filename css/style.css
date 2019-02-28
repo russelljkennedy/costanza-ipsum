@@ -5,18 +5,52 @@
   min-width: 0;
   min-height: 0;
 }
+html, body {
+  height: 100%;
+}
 body {
   background: #010101;
   color: #b27636;
   /* color: #abb236; */
   font-family: 'Niramit', Helvetica, sans-serif;
+  font-size: 1.5rem;
 }
 h1, h2, h3, h4 {
   font-family: 'Srisakdi', cursive;
+}
+h1.title {
+  font-size: 7rem;
+  text-align: center;
+  padding-bottom: 30px;
+}
+.monks-coffeehouse {
+  display: grid;
+}
+.yankees {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+button {
+  padding: 20px;
+  margin: 0 15px;
+  font-family: 'Niramit', Helvetica, sans-serif;
+  font-size: 1.5rem;
+  background:  #dcb64c;
+  border: 1px solid #dcb64c;
+  border-radius: 5px;
+}
+button:hover {
+  background: #b27636;
+  border: 1px solid #b27636;
+}
+.add {
+  display: grid;
+  margin: 30px 15px;
 }
 div[id^="quoteblock"] {
   background:  #333332;
   padding: 20px;
   min-height: 30px;
   margin-bottom: 10px;
+  border-radius: 5px;
 }
