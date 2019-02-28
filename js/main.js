@@ -2,7 +2,6 @@
 
 // Document ready functions
 jQuery(document).ready(function($) {
-
   // Add a new paragraph
   function newPara() {
     $quoteBlock = $('#quoteblock');
