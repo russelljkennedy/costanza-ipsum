@@ -12,9 +12,12 @@ body {
   background: #010101;
   color: #b27636;
   /* color: #abb236; */
+  /* color: #fcd720; */
+  /* color: #e30922; */
   font-family: 'Niramit', Helvetica, sans-serif;
   font-size: 1.5rem;
 }
+/* @TODO - Look into using Rocky */
 h1, h2, h3, h4 {
   font-family: 'Srisakdi', cursive;
 }
