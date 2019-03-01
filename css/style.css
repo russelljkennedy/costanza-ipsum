@@ -10,38 +10,60 @@ html, body {
 }
 body {
   /* background: #010101; */
-  background-image: url('../img/george-bg.jpg');
+  background: url('../img/gc-bg.png') no-repeat;
   background-size: cover;
-  color: #b27636;
+  background-color: #cbbace;
+  /* color: #b27636; */
+  color: #3e3c39;
   /* color: #abb236; */
   /* color: #fcd720; */
   /* color: #e30922; */
-  font-family: 'Niramit', Helvetica, sans-serif;
+  /* font-family: 'Niramit', Helvetica, sans-serif; */
+  font-family: alegreya-sans, sans-serif;
   font-size: 1.5rem;
 }
 /* @TODO - Look into using Rocky */
 h1, h2, h3, h4 {
-  font-family: 'Srisakdi', cursive;
+  /* font-family: 'Srisakdi', cursive; */
+  font-family: rocky, serif;
+}
+#queens {
+  grid-row: 1 / span 7;
+  /* min-height: 100%; */
 }
 .title-container {
   text-align: center;
   margin: 30px 0;
 }
-h1.title {
+.title-background {
   display: inline-block;
   background: #fcd720;
-  font-size: 7rem;
   text-align: center;
-  padding: 15px 30px 30px 30px;
+  border-radius: 50%;
+  width: 500px;
+  height: 200px;
+  transform: rotate(-12deg);
+  box-shadow: 1px 2px 3px #1d1c1c;
+}
+h1.title {
+  /* background: #fcd720; */
+  color: #e30922;
+  font-size: 7rem;
+  font-style: italic;
+  text-align: center;
+  text-shadow: 1px 2px #1d1c1c;
+  /* padding: 15px 30px 30px 30px; */
+  /* position: absolute; */
+  top: 52px;
+  left: 530px;
+  width: 550px;
+  line-height: 5.5rem;
+  transform: rotate(6.5deg);
+  display: inline-block;
 }
 .monks-coffeehouse {
   display: grid;
-}
-#cookie-crunch {
-  overflow: auto;
-padding-bottom: 111px;
-margin: 0 auto;
-width: 90%;
+  min-height: 100%;
 }
 .yankee-stadium {
   display: grid;
@@ -50,37 +72,125 @@ width: 90%;
 button {
   padding: 20px;
   margin: 0 15px;
-  font-family: 'Niramit', Helvetica, sans-serif;
+  /* font-family: 'Niramit', Helvetica, sans-serif; */
   font-size: 1.5rem;
-  background:  #dcb64c;
-  border: 1px solid #dcb64c;
+  background:  #fcd720;
+  border: 1px solid #fcd720;
   border-radius: 5px;
+  box-shadow: -1.5px 2px #676262;
 }
 button:hover {
-  background: #b27636;
-  border: 1px solid #b27636;
+  /* background: #b27636;
+  border: 1px solid #b27636; */
+  background: #f60006;
+  border: 1px solid #ff0000;
+  color: #efebe7;
 }
-.unemployed {
-  background: #b27636;
-  border: 1px solid #b27636;
+.unemployed,
+.unemployed:hover {
+  background: #a19c97;
+  border: 1px solid #a29c96;
   cursor: not-allowed;
+  color: #7c7a7a;
 }
 .yada-yada-area {
   display: grid;
   margin: 30px 45px;
   border-radius: 10px;
-  background:  #333332;
+  /* background:  #333332; */
+  background: #e5cfcf;
 }
 div[id^="yadablock"] {
-  padding: 20px;
-  min-height: 30px;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  padding: 10px;
+  /* min-height: 30px; */
+  margin-bottom: 5px;
 }
-/* #footer {
-  position: relative;
-  margin-top: -111px;
-  height: 111px;
-  clear: both;
-  background-color: #e1efef;
-} */
+#franks-footer {
+  grid-row: 8 / span 1;
+  /* min-height: 100px; */
+  background: #676663;
+  /* background: #3e3c39; */
+  color: #fcd720;
+  text-align: center;
+}
+/* Media queries */
+@media only screen and (max-width:1000px) {
+  body {
+    background-position: 10% 10%;
+    background-size: 100%;
+  }
+    /* background: url('../img/gc-bg-transparent-sm.png') no-repeat;
+    background-position: left bottom; */
+    /* background-size: 100%;
+  } */
+}
+/* Tablet */
+@media only screen and (max-width:768px) {
+  body {
+    background-position: 10% 1%;
+    background-size: 150%;
+  }
+  .yankee-stadium {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+}
+
+@media only screen and (max-width:600px) {
+  body {
+    background-position: 2% -10%;
+    background-size: 160%;
+  }
+  .title-background {
+    width: 300px;
+    height: 150px;
+  }
+  h1.title {
+    font-size: 5rem;
+    width: 350px;
+    line-height: 4.5rem;
+  }
+}
+
+@media only screen and (max-width:470px) {
+  body {
+    /* background-position: 2% -2%; */
+    background-position: 5% -12%;
+    background-size: 190%;
+  }
+  .title-container {
+    text-align: right;
+    margin: 30px 40px 0 0;
+  }
+  h1.title {
+    font-size: 4.1rem;
+    width: 220px;
+    line-height: 4rem;
+  }
+}
+
+@media only screen and (max-width:400px) {
+  body {
+    background-position: 5% -8%;
+  }
+  .title-background {
+    width: 225px;
+    height: 110px;
+  }
+  h1.title {
+    font-size: 3.5rem;
+    width: 200px;
+    line-height: 3rem;
+  }
+}
+
+@media only screen and (max-width:340px) {
+  body {
+    background-position: 5% -5%;
+  }
+}
+
+/* Small mobile */
+@media only screen and (max-width:320px) {
+
+}
