@@ -1,3 +1,11 @@
+function copyText() {
+    alert("You copied text!");
+    // var tmp = document.createElement("DIV");
+    // tmp.innerHTML = html;
+    // return tmp.textContent || tmp.innerText || "";
+    // myString = document.getElementById('yadablock');
+    // myString.replace(/<(?:.|\n)*?>/gm, '');
+}
 // Main site JS
 jQuery(document).ready(function($) {
 
@@ -86,5 +94,13 @@ jQuery(document).ready(function($) {
         $('#vandelay').addClass('unemployed');
       });
     });
+
+    // $(document).bind('copy', function(e) { var String = Sample.replace(/(<([^>]+)>)/ig,""); return String; });
+    // $(document).bind('copy', function(e) {
+    //   var String = String=$('#yadablock').text('');
+    //   return String;
+    // });
+
+
 
 });
