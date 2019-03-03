@@ -9,10 +9,10 @@ html, body {
   height: 100%;
 }
 body {
-  /* background: url('../img/gc-bg-sm.png') no-repeat; */
-  background: url('../img/gc-bg.png') no-repeat;
-  /* background-size: 50%; */
-  background-size: cover;
+  background: url('../img/gc-bg-sm.png') no-repeat;
+  /* background: url('../img/gc-bg.png') no-repeat; */
+  background-size: 50%;
+  background-position: left;
   background-color: #cbbace;
   color: #3e3c39;
   font-family: alegreya-sans, sans-serif;
@@ -63,7 +63,6 @@ h1.title {
 .yankee-stadium {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  /* background: #cbbace; */
 }
 button {
   padding: 20px;
@@ -113,12 +112,12 @@ div[id^="yadablock"] {
 
 /* Media queries */
 @media only screen and (max-width:68.75rem) {
-  /* body {
-    background: url('../img/gc-bg-sm.png') no-repeat;
+  body {
+    /* background: url('../img/gc-bg-sm.png') no-repeat; */
     background-position: left;
     background-size: 100%;
     background-color: #cbbace;
-  } */
+  }
   /* .triangle-guy {
     display: inline-block;
     background-size: 100%;
@@ -130,12 +129,6 @@ div[id^="yadablock"] {
   }
 }
 @media only screen and (max-width:64rem) {
-  body {
-    background: url('../img/gc-bg-sm.png') no-repeat;
-    background-size: 60%;
-    background-position: left;
-    background-color: #cbbace;
-  }
   button {
     padding: 12px;
   }
@@ -146,26 +139,18 @@ div[id^="yadablock"] {
   }
 }
 @media only screen and (max-width:58.75rem) {
-  /* body {
+  body {
     background-position: 10% 0%;
     background-size: 100%;
-  } */
-
-}
-
-@media only screen and (max-width:52.5rem) {
-  /* body {
-    background-size: 120%;
-  } */
-  body {
-    background-size: 37%;
-    background-position: top left;
   }
   .title-container {
     margin: 30px 0;
   }
-  .yankee-stadium {
-    background: #cbbace;
+}
+
+@media only screen and (max-width:52.5rem) {
+  body {
+    background-size: 120%;
   }
   button:nth-child(3) {
     font-size: 0.7em;
@@ -173,23 +158,22 @@ div[id^="yadablock"] {
 }
 /* Tablet */
 @media only screen and (max-width:48rem) {
-  /* body {
+  body {
     background-position: 10% -5%;
     background-size: 150%;
-  } */
+  }
   .yankee-stadium {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
-    background: #cbbace;
   }
   button:nth-child(3) {
     font-size: 1.5rem;
   }
 }
 
-@media only screen and (max-width:43.8rem) {
+@media only screen and (max-width:37.5rem) {
   body {
-    background-size: 45%;
+    background-position: 5% -3%;
   }
   .title-background {
     width: 300px;
@@ -201,16 +185,9 @@ div[id^="yadablock"] {
     line-height: 4.5rem;
   }
 }
-@media only screen and (max-width:37.5rem) {
-  /* body {
-    background-position: 5% -3%;
-  } */
-
-}
 @media only screen and (max-width:31.3rem) {
   body {
     font-size: 1.3rem;
-    background-size: 50%;
   }
   .yankee-stadium {
     grid-template-columns: repeat(4, 1fr);
@@ -226,13 +203,13 @@ div[id^="yadablock"] {
   }
 }
 @media only screen and (max-width:29.4rem) {
-  /*body {
-    background-position: 2% -2%;
-    background-position: 5% -12%;
-    background-size: 190%;
-    background-position: 5% 2%;
+  body {
+    /* background-position: 2% -2%; */
+    /* background-position: 5% -12%;
+    background-size: 190%; */
+    /* background-position: 5% 2%; */
     background-size: 170%;
-  }*/
+  }
   .title-container {
     text-align: right;
     margin: 30px 40px 30px 0;
@@ -250,11 +227,8 @@ div[id^="yadablock"] {
       grid-template-columns: repeat(1, 1fr);
       grid-gap: 10px;
   } */
-  /* body {
-    background-position: 5% -1%;
-  } */
   body {
-    background-size: 55%;
+    background-position: 5% -1%;
   }
   .btn-txt {
     display: none;
@@ -275,22 +249,19 @@ div[id^="yadablock"] {
     width: 200px;
     line-height: 3rem;
   }
-  .yankee-stadium {
-    padding-bottom: 15px;
-  }
 }
 
 /* Small mobile */
 @media only screen and (max-width:20.6rem) {
-  /* body {
+  body {
     background-position: 5% 1%;
-  } */
+  }
 }
 @media only screen and (max-width:20rem) {
-  /* body {
+  body {
     background-position: 5% 2%;
     background-size: 160%;
-  } */
+  }
   .title-container {
     margin-left: 20px;
   }
