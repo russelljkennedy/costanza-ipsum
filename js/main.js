@@ -1,11 +1,15 @@
-function copyText() {
-    alert("You copied text!");
-    // var tmp = document.createElement("DIV");
-    // tmp.innerHTML = html;
-    // return tmp.textContent || tmp.innerText || "";
-    // myString = document.getElementById('yadablock');
-    // myString.replace(/<(?:.|\n)*?>/gm, '');
-}
+// Copy clipboard data as plain text
+var txt = document.getElementsByClassName('yada-yada-area');
+txt[0].addEventListener('copy', function (e) {
+  e.preventDefault();
+  if (e.clipboardData) {
+    e.clipboardData.setData('text/plain', window.getSelection());
+  }
+  else if (window.clipboardData) {
+    window.clipboardData.setData('Text', window.getSelection());
+  }
+});
+
 // Main site JS
 jQuery(document).ready(function($) {
 
@@ -101,6 +105,66 @@ jQuery(document).ready(function($) {
     //   return String;
     // });
 
+    function getSelectionText(){
+    var selectedText = ""
+    if (window.getSelection){ // all modern browsers and IE9+
+        selectedText = $.trim(window.getSelection().toString());
+    }
+    return selectedText;
+}
 
+
+    // $('#yadablock').on('copy', function(e){
+    //
+    //    $('style').remove();
+    //
+    //    // window.getSelection().append('p');
+    //
+    //    // $txt.append('p');
+    //
+    //    // return $txt;
+    //
+    //   // $txt = window.getSelection();
+    //   // window.getSelection().remove();
+    //   // $txt = $.trim(window.getSelection().toString());
+    //   // $.trim(window.getSelection().toString());
+    //   // $.trim(window.getSelection().replace(/(<([^>]+)>)/ig,""));
+    //   // window.getSelection().replace(/(<([^>]+)>)/ig,"");
+    //   // $copied
+    //   // alert($txt);
+    //
+    //   // var selectedText = ""
+    //   // if (window.getSelection){ // all modern browsers and IE9+
+    //   //     // selectedText = $.trim(window.getSelection().toString());
+    //   //
+    //   //     // selectedText = $.trim(window.getSelection().toString());
+    //   //     selectedText = $(window.getSelection().css({'background-color' : '', 'font-weight' : ''}));
+    //   //     // copyText = selectedText.css({'background-color' : '', 'font-weight' : ''});
+    //   //
+    //   //     alert(selectedText);
+    //   //
+    //   //     // copyText = selectedText.css({'background-color' : '', 'font-weight' : ''});
+    //   //     // $(this).css({'background-color' : '', 'font-weight' : ''});
+    //   //
+    //   //     // alert(copyText);
+    //   // }
+    //   // // return copyText;
+    //   // return selectedText;
+    //
+    //
+    //   // alert('Copied!');
+    //   // var text = "";
+    //   // if (window.getSelection) {
+    //   //     // text = window.getSelection().toString();
+    //   //     text = window.getSelection().toString();
+    //   //     copied = text.replace(/(<([^>]+)>)/ig,"");
+    //   //
+    //   // } else if (document.selection && document.selection.type != "Control") {
+    //   //     text = document.selection.createRange().text;
+    //   // }
+    //   //
+    //   // alert(copied);
+    //
+    // });
 
 });
