@@ -1,13 +1,25 @@
 // Copy clipboard data as plain text
 var txt = document.getElementsByClassName('yada-yada-area');
 txt[0].addEventListener('copy', function (e) {
-  e.preventDefault();
-  if (e.clipboardData) {
+  if (/Edge/.test(navigator.userAgent)) {
+    // return True;
+    // e.preventDefault();
+    // // e.clipboardData.setData("text", window.getSelection());
+    // console.log(window.getSelection());
+    // var string = window.getSelection().toString();
+    // e.setData("text", string);
+
+  }
+  // Copy in IE
+  else if (window.clipboardData) {
+    // return True;
+  }
+  // Copy in Chrome, Firefox etc.
+  else if (e.clipboardData) {
+    e.preventDefault();
     e.clipboardData.setData('text/plain', window.getSelection());
   }
-  else if (window.clipboardData) {
-    window.clipboardData.setData('Text', window.getSelection());
-  }
+
 });
 
 // Main site JS
@@ -105,14 +117,18 @@ jQuery(document).ready(function($) {
     //   return String;
     // });
 
-    function getSelectionText(){
-    var selectedText = ""
-    if (window.getSelection){ // all modern browsers and IE9+
-        selectedText = $.trim(window.getSelection().toString());
-    }
-    return selectedText;
-}
+//     function getSelectionText(){
+//     var selectedText = ""
+//     if (window.getSelection){ // all modern browsers and IE9+
+//         selectedText = $.trim(window.getSelection().toString());
+//     }
+//     return selectedText;
+// }
 
+    // $('yada-yada-area').on('copy', function(e) {
+    //   e.preventDefault();
+    //   $('.yada-yada-area').trim();
+    // });
 
     // $('#yadablock').on('copy', function(e){
     //

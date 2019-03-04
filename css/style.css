@@ -60,7 +60,7 @@ h1.title {
   grid-template-columns: repeat(4, 1fr);
 }
 button {
-  padding: 20px;
+  padding: 10px;
   margin: 0 15px;
   font-size: 1.5rem;
   background:  #fcd720;
@@ -79,6 +79,10 @@ button:hover {
 .icon {
   display: inline;
   float: right;
+}
+.desk-nap,
+span.icon {
+  font-size: 2rem;
 }
 .unemployed,
 .unemployed:hover {
@@ -104,6 +108,25 @@ div[id^="yadablock"] {
   padding-top: 15px;
 }
 /* Media queries */
+@media only screen and (min-height:53.1rem) {
+  /* #franks-footer {
+    grid-row: 8 / span 4;
+  } */
+  body {
+    background: #cbbace;
+  }
+  .triangle-guy {
+    display: inline-block;
+    position: absolute;
+    left: 200px;
+  }
+  .triangle-guy img {
+    height: 250px;
+  }
+  .yankee-stadium {
+    background: #cbbace;
+  }
+}
 @media only screen and (max-width:68.75rem) {
   .yada-yada-area {
     margin: 30px;
@@ -124,9 +147,9 @@ div[id^="yadablock"] {
   .triangle-guy img {
     height: 250px;
   }
-  button {
+  /* button {
     padding: 12px;
-  }
+  } */
 }
 @media only screen and (max-width:60rem) {
   button:nth-child(3) {
@@ -178,7 +201,7 @@ div[id^="yadablock"] {
     grid-gap: 5px;
   }
   button {
-    padding: 10px;
+    padding: 0;
     margin: 0 5px;
   }
   button,
