@@ -1,28 +1,24 @@
+// Main site JS
+
 // Copy clipboard data as plain text
 var txt = document.getElementsByClassName('yada-yada-area');
 txt[0].addEventListener('copy', function (e) {
+  // IE and Edge don't support this function so we just carry out the default copy action for them.
   if (/Edge/.test(navigator.userAgent)) {
-    // return True;
-    // e.preventDefault();
-    // // e.clipboardData.setData("text", window.getSelection());
-    // console.log(window.getSelection());
-    // var string = window.getSelection().toString();
-    // e.setData("text", string);
-
+    return true;
   }
   // Copy in IE
   else if (window.clipboardData) {
-    // return True;
+    return true;
   }
-  // Copy in Chrome, Firefox etc.
+  // Copy as plain text in Chrome, Firefox etc.
   else if (e.clipboardData) {
     e.preventDefault();
     e.clipboardData.setData('text/plain', window.getSelection());
   }
-
 });
 
-// Main site JS
+// Document ready functions
 jQuery(document).ready(function($) {
 
   // Add a new paragraph.
@@ -110,77 +106,4 @@ jQuery(document).ready(function($) {
         $('#vandelay').addClass('unemployed');
       });
     });
-
-    // $(document).bind('copy', function(e) { var String = Sample.replace(/(<([^>]+)>)/ig,""); return String; });
-    // $(document).bind('copy', function(e) {
-    //   var String = String=$('#yadablock').text('');
-    //   return String;
-    // });
-
-//     function getSelectionText(){
-//     var selectedText = ""
-//     if (window.getSelection){ // all modern browsers and IE9+
-//         selectedText = $.trim(window.getSelection().toString());
-//     }
-//     return selectedText;
-// }
-
-    // $('yada-yada-area').on('copy', function(e) {
-    //   e.preventDefault();
-    //   $('.yada-yada-area').trim();
-    // });
-
-    // $('#yadablock').on('copy', function(e){
-    //
-    //    $('style').remove();
-    //
-    //    // window.getSelection().append('p');
-    //
-    //    // $txt.append('p');
-    //
-    //    // return $txt;
-    //
-    //   // $txt = window.getSelection();
-    //   // window.getSelection().remove();
-    //   // $txt = $.trim(window.getSelection().toString());
-    //   // $.trim(window.getSelection().toString());
-    //   // $.trim(window.getSelection().replace(/(<([^>]+)>)/ig,""));
-    //   // window.getSelection().replace(/(<([^>]+)>)/ig,"");
-    //   // $copied
-    //   // alert($txt);
-    //
-    //   // var selectedText = ""
-    //   // if (window.getSelection){ // all modern browsers and IE9+
-    //   //     // selectedText = $.trim(window.getSelection().toString());
-    //   //
-    //   //     // selectedText = $.trim(window.getSelection().toString());
-    //   //     selectedText = $(window.getSelection().css({'background-color' : '', 'font-weight' : ''}));
-    //   //     // copyText = selectedText.css({'background-color' : '', 'font-weight' : ''});
-    //   //
-    //   //     alert(selectedText);
-    //   //
-    //   //     // copyText = selectedText.css({'background-color' : '', 'font-weight' : ''});
-    //   //     // $(this).css({'background-color' : '', 'font-weight' : ''});
-    //   //
-    //   //     // alert(copyText);
-    //   // }
-    //   // // return copyText;
-    //   // return selectedText;
-    //
-    //
-    //   // alert('Copied!');
-    //   // var text = "";
-    //   // if (window.getSelection) {
-    //   //     // text = window.getSelection().toString();
-    //   //     text = window.getSelection().toString();
-    //   //     copied = text.replace(/(<([^>]+)>)/ig,"");
-    //   //
-    //   // } else if (document.selection && document.selection.type != "Control") {
-    //   //     text = document.selection.createRange().text;
-    //   // }
-    //   //
-    //   // alert(copied);
-    //
-    // });
-
 });
