@@ -19,6 +19,9 @@ body {
 h1, h2, h3, h4 {
   font-family: rocky, serif;
 }
+a {
+  color: #f60006;
+}
 .monks-coffeehouse {
   display: -ms-grid;
   display: grid;
@@ -31,7 +34,7 @@ h1, h2, h3, h4 {
   -ms-grid-row-span: 7;
   grid-row: 1 / span 7;
 }
-.triangle-guy {
+.candybar-lineup {
   display: none;
   z-index: -30;
 }
@@ -134,17 +137,57 @@ div[id^="yadablock"] {
   text-align: center;
   padding-top: 15px;
 }
+.content {
+  width: 90%;
+  margin: 30px 45px;
+  border-radius: 10px;
+  background: #e5cfcf;
+  padding: 20px 0;
+}
+.title-container-alt {
+  text-align: center;
+  margin: 30px 0;
+}
+.title-background-alt {
+  display: inline-block;
+  background: #fcd720;
+  text-align: center;
+  border-radius: 50%;
+  width: 500px;
+  height: 200px;
+  -webkit-transform: rotate(-12deg);
+      -ms-transform: rotate(-12deg);
+          transform: rotate(-12deg);
+  -webkit-box-shadow: 1px 2px 3px #1d1c1c;
+          box-shadow: 1px 2px 3px #1d1c1c;
+}
+.title-alt {
+  color: #e30922;
+  font-size: 7rem;
+  font-style: italic;
+  text-align: center;
+  text-shadow: 1px 2px #1d1c1c;
+  width: 550px;
+  line-height: 5.5rem;
+  -webkit-transform: rotate(6.5deg);
+      -ms-transform: rotate(6.5deg);
+          transform: rotate(6.5deg);
+  display: inline-block;
+}
+.centre {
+  text-align: center;
+}
 /* Media queries */
 @media only screen and (min-height:53.1rem) {
   body {
     background: #cbbace;
   }
-  .triangle-guy {
+  .candybar-lineup {
     display: inline-block;
     position: absolute;
     left: 200px;
   }
-  .triangle-guy img {
+  .candybar-lineup img {
     height: 250px;
   }
   .yankee-stadium {
@@ -163,18 +206,26 @@ div[id^="yadablock"] {
   .title-container {
     margin: 30px 0;
   }
-  .triangle-guy {
+  .candybar-lineup {
     display: inline-block;
     position: absolute;
     left: 0;
   }
-  .triangle-guy img {
+  .candybar-lineup img {
     height: 250px;
   }
 }
-@media only screen and (max-width:60rem) {
+@media only screen and (max-width:60.625rem) {
   button:nth-child(3) {
     font-size: 0.8em;
+  }
+}
+@media only screen and (max-width:53.94rem) {
+  button:nth-child(3) {
+    font-size: 0.7em;
+  }
+  .desk-nap {
+    font-size: 1.3rem;
   }
 }
 @media only screen and (max-width:52.5rem) {
@@ -183,9 +234,6 @@ div[id^="yadablock"] {
   }
   .yankee-stadium {
     background: #cbbace;
-  }
-  button:nth-child(3) {
-    font-size: 0.7em;
   }
 }
 /* Tablet */
@@ -215,23 +263,36 @@ div[id^="yadablock"] {
     -ms-grid-column: 2;
     -ms-grid-row: 2;
   }
+  .desk-nap {
+    font-size: 2rem;
+  }
 }
 @media only screen and (max-width:43.8rem) {
-  .title-background {
+  .title-background,
+  .title-background-alt {
     width: 300px;
     height: 150px;
   }
-  h1.title {
+  h1.title,
+  h1.title-alt {
     font-size: 5rem;
     width: 350px;
     line-height: 4.5rem;
+  }
+  .content {
+    width: auto;
+  }
+}
+@media only screen and (max-width:31.6rem) {
+  button:nth-child(3) {
+    font-size: 1.1rem;
   }
 }
 @media only screen and (max-width:31.3rem) {
   body {
     font-size: 1.3rem;
   }
-  .triangle-guy img {
+  .candybar-lineup img {
     height: 180px;
   }
   .yankee-stadium {
@@ -274,6 +335,19 @@ div[id^="yadablock"] {
     width: 220px;
     line-height: 4rem;
   }
+  .title-container-alt {
+    text-align: left;
+    margin: 30px;
+  }
+  .title-background-alt {
+    width: 200px;
+    height: 100px;
+  }
+  h1.title-alt {
+    font-size: 2.8rem;
+    width: 200px;
+    line-height: 3rem;
+  }
 }
 /* Large mobile */
 @media only screen and (max-width:26.6rem) {
@@ -299,13 +373,13 @@ div[id^="yadablock"] {
   }
 }
 @media only screen and (max-width:21.9rem) {
-  .triangle-guy img {
+  .candybar-lineup img {
     height: 150px;
   }
 }
 /* Small mobile */
 @media only screen and (max-width:20rem) {
-  .triangle-guy img {
+  .candybar-lineup img {
     height: 140px;
   }
   .title-container {
@@ -313,7 +387,7 @@ div[id^="yadablock"] {
   }
 }
 @media only screen and (max-width:19.9rem) {
-  .triangle-guy {
+  .candybar-lineup {
     display: none;
   }
   .title-container {
