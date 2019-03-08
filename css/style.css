@@ -22,6 +22,9 @@ h1, h2, h3, h4 {
 a {
   color: #f60006;
 }
+a:hover {
+  color: #6b4b6b;
+}
 .monks-coffeehouse {
   display: -ms-grid;
   display: grid;
@@ -136,6 +139,7 @@ div[id^="yadablock"] {
   background: #fcd720;
   text-align: center;
   padding-top: 15px;
+  padding-bottom: 20px;
 }
 .content {
   width: 90%;
